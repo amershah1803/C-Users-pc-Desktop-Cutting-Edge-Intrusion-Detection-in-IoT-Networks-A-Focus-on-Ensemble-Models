@@ -7,25 +7,21 @@ import re
 
 app = Flask(__name__)
 
-# Load trained model and scaler
-model = joblib.load("Models/model.sav")
+# Load trained model from Hugging Face
 
-# Labels for classification
-labels = [
-    "ARP_poisioning",
-    "DDOS_Slowloris",
-    "DOS_SYN_Hping",
-    "Metasploit_Brute_Force_SSH",
-    "MQTT_Publish",
-    "NMAP_FIN_SCAN",
-    "NMAP_OS_DETECTION",
-    "NMAP_TCP_scan",
-    "NMAP_UDP_SCAN",
-    "NMAP_XMAS_TREE_SCAN",
-    "Thing_Speak",
-    "Wipro_bulb"
-    ]
+import os
+import requests
 
+MODEL_URL = "https://huggingface.co/Amershah1803/intrusion-detection-model/resolve/main/model.sav"
+MODEL_PATH = "model.sav"
+
+if not os.path.exists(MODEL_PATH):
+    response = requests.get(MODEL_URL)
+    response.raise_for_status()
+    with open(MODEL_PATH, "wb") as f:
+        f.write(response.content)
+
+model = joblib.load(MODEL_PATH)
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -133,4 +129,4 @@ def login():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=5000)
