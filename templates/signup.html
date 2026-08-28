@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IoT Intrusion Detection - Register</title>
+    <link rel="stylesheet" href="../static/css/auth-forms.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+</head>
+
+<body>
+    <div class="wrapper signup-wrapper">
+        <div class="title">
+            <i class="fas fa-user-plus"></i>
+            <span>IoT Security Registration</span>
+        </div>
+        <form action="/signup" method="post">
+            {% if message %}
+            <div class="error-message">
+                <i class="fas fa-exclamation-triangle"></i>
+                {{ message }}
+            </div>
+            {% endif %}
+            
+            <div class="form-row">
+                <div class="row">
+                    <i class="fas fa-user"></i>
+                    <input type="text" name="user" placeholder="Username (min 6 chars)" required />
+                </div>
+                <div class="row">
+                    <i class="fas fa-id-card"></i>
+                    <input type="text" name="name" placeholder="Full Name" required />
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="row">
+                    <i class="fas fa-envelope"></i>
+                    <input type="email" name="email" placeholder="Email Address" required />
+                </div>
+                <div class="row">
+                    <i class="fas fa-phone"></i>
+                    <input type="text" name="mobile" placeholder="Mobile Number" required />
+                </div>
+            </div>
+            
+            <div class="row">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="password" placeholder="Password (min 8 chars, uppercase, lowercase, number)" required />
+            </div>
+            
+            <div class="row button">
+                <input type="submit" value="Sign Up" />
+            </div>
+            
+            <div class="signup-link">Already a member? <a href="/login">Sign in now</a></div>
+        </form>
+    </div>
+</body>
+
+</html>

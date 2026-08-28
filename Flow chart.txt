@@ -1,0 +1,55 @@
+1. Data Ingestion
+   - Input: RT-IoT2022 Dataset
+     (https://www.kaggle.com/datasets/supplejade/rt-iot2022real-time-internet-of-things)
+   - Load into Pandas DataFrame
+
+2. Preprocessing
+   - Handle missing values (drop or impute)
+   - Label encode categorical variables
+   - Standardize numeric features
+   - Apply SMOTE if data is imbalanced
+
+3. Data Visualization
+
+4. Splitting the Dataset
+   - Train-Test split
+
+5. Model Training
+   a) Baseline Models
+      - KNN
+      - SVM
+      - Decision Tree
+      - Gradient Boosting
+      - XGBoost
+      - Random Forest
+      - Extremely Randomized Tree
+   b) Extension Models
+      - Voting Classifier (Random Forest + ExtraTree + LightGBM)+ Feature Selection           +SMOTEENN
+  
+
+6. Evaluation
+   - Metrics: Accuracy, Precision, Recall, F1-score
+   - Confusion Matrix (false positives & negatives)
+   - Precision-Recall Curve
+   - Explainable AI (XAI):
+       * LIME
+       * SHAP
+
+7. Save Artifacts
+   - Save best performing model
+
+8. Flask Web App
+   - Frontend (HTML & CSS):
+       * Input form for features
+   - Backend (Flask):
+       * Load saved model
+       * Preprocess incoming features
+       * Predict intrusion
+       * Return result to user
+
+Extension: 
+
+In the base paper the author mentioned using the RT-IoT2022 dataset for analysis and predicting Intrusion using different ML models. 
+As extension we applied XGBoost index selection Resampling the data using SMOTEENN ensemble model of Voting Classifier (Random Forest + ExtraTree + LightGBM)  for analysis the data for all feature reduction techniques,
+Additionally, we integrated Explainable AI techniques, specifically LIME and SHAP, to provide clear insights into feature importance, thereby enhancing model interpretability and supporting more informed and transparent clinical decision-making.
+Along with this extension we used Flask Framework for UI for user provides input for prediction using trained models for dataset

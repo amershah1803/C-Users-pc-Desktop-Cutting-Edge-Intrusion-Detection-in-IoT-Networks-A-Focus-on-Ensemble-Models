@@ -1,0 +1,407 @@
+/* Result Page Styles */
+
+/* Animation Classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Header Section */
+.result-header {
+    background: linear-gradient(135deg, rgba(71, 97, 255, 0.1), rgba(108, 92, 231, 0.1));
+    padding: 40px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    border: 1px solid rgba(71, 97, 255, 0.2);
+}
+
+.result-header h1 {
+    color: #1C2035;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.result-header .lead {
+    color: #555555;
+    font-size: 1.2rem;
+}
+
+/* Main Result Card */
+.result-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(71, 97, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.result-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #dc3545, #fd7e14, #ffc107);
+}
+
+.result-icon {
+    flex-shrink: 0;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(220, 53, 69, 0.1), rgba(253, 126, 20, 0.1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid rgba(220, 53, 69, 0.2);
+}
+
+.result-icon i {
+    font-size: 3rem;
+}
+
+.result-content {
+    flex: 1;
+}
+
+.result-title {
+    color: #1C2035;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.confidence-score {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.confidence-label {
+    color: #555555;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.confidence-value {
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 1.2rem;
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+}
+
+.threat-level .badge {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Information Cards */
+.info-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(71, 97, 255, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    background: linear-gradient(135deg, #4761FF, #6c5ce7);
+    color: white;
+    padding: 20px 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.card-header i {
+    font-size: 1.5rem;
+    width: 30px;
+    text-align: center;
+}
+
+.card-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.card-content {
+    padding: 25px;
+}
+
+.card-content p {
+    color: #555555;
+    line-height: 1.6;
+    margin-bottom: 0;
+    font-size: 1rem;
+}
+
+.card-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.card-content li {
+    color: #555555;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(71, 97, 255, 0.1);
+    position: relative;
+    padding-left: 25px;
+    line-height: 1.5;
+}
+
+.card-content li:last-child {
+    border-bottom: none;
+}
+
+.card-content li::before {
+    content: '•';
+    color: #4761FF;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 10px;
+}
+
+/* Action Buttons */
+.action-buttons {
+    background: rgba(71, 97, 255, 0.05);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid rgba(71, 97, 255, 0.1);
+}
+
+.action-buttons .btn {
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.action-buttons .btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.action-buttons .btn:hover::before {
+    left: 100%;
+}
+
+.action-buttons .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(71, 97, 255, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .result-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+    
+    .result-icon {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .result-icon i {
+        font-size: 2.5rem;
+    }
+    
+    .result-title {
+        font-size: 2rem;
+    }
+    
+    .confidence-score {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .action-buttons .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .action-buttons .btn:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .result-header {
+        padding: 30px 20px;
+    }
+    
+    .result-header h1 {
+        font-size: 2rem;
+    }
+    
+    .result-title {
+        font-size: 1.5rem;
+    }
+    
+    .card-header {
+        padding: 15px 20px;
+    }
+    
+    .card-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .card-content {
+        padding: 20px;
+    }
+}
+
+/* Special styling for different threat levels */
+.threat-level .badge {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.threat-level .badge.bg-danger {
+    background: linear-gradient(135deg, #dc3545, #c82333) !important;
+    color: white !important;
+    box-shadow: 0 5px 15px rgba(220, 53, 69, 0.3);
+}
+
+.threat-level .badge.bg-warning {
+    background: linear-gradient(135deg, #ffc107, #e0a800) !important;
+    color: #212529 !important;
+    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.3);
+}
+
+.threat-level .badge.bg-info {
+    background: linear-gradient(135deg, #17a2b8, #138496) !important;
+    color: white !important;
+    box-shadow: 0 5px 15px rgba(23, 162, 184, 0.3);
+}
+
+.threat-level .badge.bg-success {
+    background: linear-gradient(135deg, #28a745, #1e7e34) !important;
+    color: white !important;
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+}
+
+.threat-level .badge.bg-secondary {
+    background: linear-gradient(135deg, #6c757d, #545b62) !important;
+    color: white !important;
+    box-shadow: 0 5px 15px rgba(108, 117, 125, 0.3);
+}
+
+/* Hover effect for threat badges */
+.threat-level .badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Loading animation for dynamic content */
+.loading {
+    opacity: 0.6;
+    position: relative;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #4761FF;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Enhanced hover effects */
+.info-card .card-header {
+    transition: all 0.3s ease;
+}
+
+.info-card:hover .card-header {
+    background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+}
+
+/* Custom scrollbar for long content */
+.card-content {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.card-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.card-content::-webkit-scrollbar-track {
+    background: rgba(71, 97, 255, 0.1);
+    border-radius: 3px;
+}
+
+.card-content::-webkit-scrollbar-thumb {
+    background: #4761FF;
+    border-radius: 3px;
+}
+
+.card-content::-webkit-scrollbar-thumb:hover {
+    background: #6c5ce7;
+}
